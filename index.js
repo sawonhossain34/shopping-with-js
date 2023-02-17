@@ -1,6 +1,8 @@
 
+let serial = 0;
 document.getElementById('first-card').addEventListener('click',function(){
     // get the data
+    serial += 1;
     const productName = document.getElementById('first-name').innerText;
     const productPrice = document.getElementById('first-price').innerText;
     const productQuantity = document.getElementById('first-quantity').innerText;
@@ -16,6 +18,7 @@ document.getElementById('first-card').addEventListener('click',function(){
 
 document.getElementById('secound-card').addEventListener('click',function(e){
     // console.log(e.target.parentNode.parentNode.children[0].innerText);
+    serial += 1;
     const pName = e.target.parentNode.parentNode.children[0].innerText;
     const pPrice = e.target.parentNode.parentNode.children[2].children[0].innerText;
     const pQuantity = e.target.parentNode.parentNode.children[3].children[0].innerText;
@@ -33,7 +36,7 @@ function displayData(productName,productPrice,productQuantity,priceTotal){
 
     const tr = document.createElement("tr")
     tr.innerHTML = `
-    <td>${1}</td>
+    <td>${serial}</td>
     <td>${productName}</td>
     <td>${productPrice}</td>
     <td>${productQuantity}</td>
